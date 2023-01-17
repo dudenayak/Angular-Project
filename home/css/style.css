@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 * {
     padding: 0;
     margin: 0;
@@ -19,8 +21,9 @@ body {
 #main{
     background-color: #0E0E0E;
     width: 100%;
-    /* height: 100vh; */
-    position: relative;
+    height: 100%;
+    /* position: relative; */
+
 }
 
 .library-container{
@@ -131,7 +134,8 @@ ul li {
     width: 100%;
     color: #fff;
     z-index: 10;
-    overflow: hidden;
+    /* overflow: hidden; */
+    /* margin-bottom: 80px; */
 }
 
 .music{
@@ -227,6 +231,7 @@ ul li {
     padding: 0 25px;
     width: 320px;
     z-index: 5;
+    overflow: hidden;
 }
 
 .heading{

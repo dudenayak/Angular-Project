@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js">
     </script>
-    <script src="./app.js"></script>
+    <!-- <script src="./controllers/login-signup.js"></script> -->
+    <script src="./controllers/app.js"></script>
+    <script src="./controllers/routes.js"></script>
 </head>
 
 <body ng-app="myApp" ng-controller="myCtrl">
@@ -31,8 +33,7 @@
                     placeholder="Username or Email" required />
                 <input ng-model="password_login" type="password" name="userpassword1" class="input-box"
                     placeholder="Password" required />
-                <input type="button" name="login-button" class="button" value="Login">
-                <!-- ng-click="loadData()" /> -->
+                <input type="button" name="login-button" class="button" value="Login" ng-click="loadData($event)" />
             </form>
         </div>
     </section>
@@ -85,70 +86,11 @@
                 <span ng-show="myForm.usercpassword1.$error.required && check() && myForm.usercpassword1.$touched"
                     class="error">Password is required.</span>
                 <span ng-show="myForm.usercpassword1.$touched && !check()" class="error">Passwords do not match</span>
-                <input type="submit" ng-model="button" name="signup-button" class="button" value="Sign Up">
-                <!-- ng-click="return saveData()" /> -->
+                <input type="submit" ng-model="button" name="signup-button" class="button" value="Sign Up"
+                    ng-click="saveData($event)" />
             </form>
         </div>
     </section>
 </body>
-<!-- <script>
-    function saveData(e) {
-        let username, email, phone, password, cpassword;
-        username = document.getElementById("username").value;
-        email = document.getElementById("email").value;
-        phone = document.getElementById("phone").value;
-        password = document.getElementById("password").value;
-        cpassword = document.getElementById("cpassword").value;
-
-        document.getElementById("username").value != '';
-        document.getElementById("email").value != '';
-        document.getElementById("phone").value != '';
-        document.getElementById("password").value != '';
-        document.getElementById("cpassword").value != '';
-
-        let user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
-        if (user_records.some((v) => { return v.email == email })) {
-            alert("This Email ID is already in use!")
-        } else {
-            user_records.push({
-                "username": username,
-                "email": email,
-                "phone": phone,
-                "password": password,
-                "cpassword": cpassword
-            })
-            alert("User registered successfully!! Please login now!")
-            location.reload();
-            localStorage.setItem("users", JSON.stringify(user_records));
-            document.getElementById("username").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("phone").value = "";
-            document.getElementById("password").value = "";
-            document.getElementById("cpassword").value = "";
-
-            return false;
-        }
-    }
-
-    function loadData() {
-        let username, password;
-        username = document.getElementById("username_login").value;
-        password = document.getElementById("password_login").value;
-
-        let user_records = new Array();
-        user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
-        if (user_records.some((v) => { return v.username == username || v.email == username && v.password == password })) {
-            alert("Logged in successfully!");
-            let current_user = user_records.filter((v) => { return v.username == username || v.email == username && v.password == password })[0]
-            localStorage.setItem("code", "secret");
-            window.location.href = "home.html";
-        } else {
-            alert("Login failed")
-        }
-    }
-</script> -->
-<!-- <script src="./login/js/main.js"></script> -->
-<!-- <script src="./registration.js"></script> -->
-
 
 </html>

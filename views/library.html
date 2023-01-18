@@ -1,16 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<div id="main" class="main">
+    <div class="library-container">
+        <script src="./navbar.js"></script>
+        <form action=''>
+            <input type='hidden' id='hidden_token'>
+            <div class="genre">
+                <label for='Genre' class='form-label'>Genre:</label>
+                <select name='' id='select_genre' class='form-control'>
+                    <option>Select...</option>
+                </select>
+            </div>
+            <div class="genre">
+                <label for='Genre' class='form-label'>Playlists:</label>
+                <select name='' id='select_playlist' class='form-control'>
+                    <option>Select...</option>
+                </select>
+            </div>
+            <button type='submit' id='btn_submit' class='btn-success'>Search</button>
+        </form>
+        <div class='songs'>
+            <div class='list-group song-list'>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../home/css/style.css" />
-</head>
-
-<body>
-    <h1>Library</h1>
-</body>
-
-</html>
+            </div>
+            <div class='song_detail' id='song-detail'>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,60 @@
 <div id="main" class="main">
-    <div class="library-container">
-        <script src="./navbar.js"></script>
+    <div>
+        <!-- navbar start -->
+        <div id='header' class='header'>
+            <a href="#!/home">
+                <div class='logo'><img src='./home/img/fullLogo.jpg' alt='Spotify Full Logo' class='brand' /></div>
+            </a>
+            <div id="myDIV" class="links">
+                <ul><a href="#!/home`">
+                        <li class="linkColor active">New Releases</li>
+                    </a><a href="#!/trending">
+                        <li class="linkColor">Trending</li>
+                    </a><a href="#!/playlist">
+                        <li class="linkColor">Playlist</li>
+                    </a><a href="#!/library">
+                        <li class="linkColor">Library</li>
+                    </a><a href="#!/contact">
+                        <li class="linkColor">Contact Us</li>
+                    </a></ul>
+            </div>
+            <div style="cursor: pointer;" ng-click="logout()">
+                <div class='profile'><img src='./home/img/user.jpg' alt='User Profile' class='user_img' />
+                    <div class='user_name'></div>
+                    <div style='text-decoration: none; color: #fff; font-size: 15px; '>Logout</div>
+                </div>
+            </div>
+        </div>
+        <!-- navbar end -->
+        <div class="library-container">
+
+            <form action=''>
+                <input type='hidden' id='hidden_token'>
+                <div class="genre">
+                    <label for='Genre' class='form-label'>Genre:</label>
+                    <select name='' id='select_genre' class='form-control'>
+                        <option>Select...</option>
+                    </select>
+                </div>
+                <div class="genre">
+                    <label for='Genre' class='form-label'>Playlists:</label>
+                    <select name='' id='select_playlist' class='form-control'>
+                        <option>Select...</option>
+                    </select>
+                </div>
+                <button type='submit' id='btn_submit' class='btn-success'>Search</button>
+            </form>
+            <div class='songs'>
+                <div class='list-group song-list'>
+
+                </div>
+                <div class='song_detail' id='song-detail'>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="library-container">
+
         <form action=''>
             <input type='hidden' id='hidden_token'>
             <div class="genre">
@@ -24,5 +78,5 @@
             <div class='song_detail' id='song-detail'>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

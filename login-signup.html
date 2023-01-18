@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
 
 <head>
@@ -11,17 +11,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js">
 
     </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
-    <!-- <script src="./controllers/login-signup.js"></script> -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>    
     <script src="./controllers/signup.js"></script>
     <script src="./controllers/routes.js"></script>
-</head>
+</head> -->
 
 <body ng-app="myApp" ng-controller="myCtrl">
     <!-- LEFT FORM -->
     <section class="left-section">
         <div id="left-cover" class="cover cover-hide">
             <img src="login/img/cover.png" alt="" />
+
             <h1>Welcome User!</h1>
             <h3>Already have an account?</h3>
             <button type="button" class="switch-button" ng-click="reload()">
@@ -29,7 +29,8 @@
             </button>
         </div>
         <div id="left-form" class="form fade-in-element">
-            <h1>Login</h1>
+            <!-- <img src="login/img/cover1.png" alt="" /> -->
+            <h1 style="color: white;">Login</h1>
             <form action="/" method="GET" novalidate autocomplete="off">
                 <input ng-model="username_login" type="text" name="username1" class="input-box"
                     placeholder="Username or Email" required />
@@ -51,7 +52,8 @@
             </button>
         </div>
         <div id="right-form" class="form form-hide">
-            <h1>Sign Up</h1>
+            <!-- <img src="login/img/cover1.png" alt="" /> -->
+            <h1 style="color: white;">Sign Up</h1>
             <form ng-model="form" action="/" name="myForm" method="post">
                 <!-- ng-submit="return checkForBlank()"> -->
                 <input ng-model="username" type="text" name="username1" class="input-box" placeholder="Username"

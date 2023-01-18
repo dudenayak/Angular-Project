@@ -1,11 +1,121 @@
 var app = angular.module('myApp', ['ngRoute']);
+
+// HOME CONTROLLER
+app.controller('homeCtrl', [
+  '$scope',
+  '$location',
+  function ($scope, $location) {
+    var check = localStorage.getItem('code');
+    if (check == 'secret') {
+    } else {
+      $location.path('/');
+    }
+    $scope.logout = () => {
+      // console.log('njrgjknrejkvn');
+      localStorage.setItem('code', 'logout');
+      $location.path('/');
+    };
+  },
+]);
+
+// TRENDING CONTROLLER
+app.controller('trendingCtrl', [
+  '$scope',
+  '$location',
+  function ($scope, $location) {
+    var check = localStorage.getItem('code');
+    if (check == 'secret') {
+    } else {
+      $location.path('/');
+    }
+    $scope.logout = () => {
+      // console.log('njrgjknrejkvn');
+      localStorage.setItem('code', 'logout');
+      $location.path('/');
+    };
+  },
+]);
+
+// PLAYLIST CONTROLLER
+app.controller('playlistCtrl', [
+  '$scope',
+  '$location',
+  function ($scope, $location) {
+    var check = localStorage.getItem('code');
+    if (check == 'secret') {
+    } else {
+      $location.path('/');
+    }
+    $scope.logout = () => {
+      // console.log('njrgjknrejkvn');
+      localStorage.setItem('code', 'logout');
+      $location.path('/');
+    };
+  },
+]);
+
+// LIBRARY CONTROLLER
+app.controller('libraryCtrl', [
+  '$scope',
+  '$location',
+  function ($scope, $location) {
+    var check = localStorage.getItem('code');
+    if (check == 'secret') {
+    } else {
+      $location.path('/');
+    }
+    $scope.logout = () => {
+      // console.log('njrgjknrejkvn');
+      localStorage.setItem('code', 'logout');
+      $location.path('/');
+    };
+  },
+]);
+
+// CONTACT CONTROLLER
+app.controller('contactCtrl', [
+  '$scope',
+  '$location',
+  function ($scope, $location) {
+    var check = localStorage.getItem('code');
+    if (check == 'secret') {
+    } else {
+      $location.path('/');
+    }
+    $scope.logout = () => {
+      // console.log('njrgjknrejkvn');
+      localStorage.setItem('code', 'logout');
+      $location.path('/');
+    };
+  },
+]);
+
+// LOGOUT CONTROLLER
+// app.controller('logoutCtrl', [
+//   '$scope',
+//   '$location',
+//   function ($scope, $location) {
+//     var logout = localStorage.setItem('code', 'logout');
+//     // window.location.href = "login-signup.html"
+//     $location.path('/');
+//   },
+// ]);
+
+// LOGIN CONTROLLER
 app.controller('myCtrl', [
   '$scope',
   '$location',
   '$http',
   '$window',
   'getLocalStorage',
-  function ($scope, $location, $http, $window, getLocalStorage) {
+  '$rootScope',
+  function ($scope, $location, $http, $window, getLocalStorage, $rootScope) {
+    // $rootScope.logout = function () {
+    //   console.log('logout');
+    //   localStorage.setItem('code', 'logout');
+    //   $location.path('/');
+    // };
+
     $scope.switchSide = function (event) {
       var left_cover = angular.element(document.querySelector('#left-cover'));
       var left_form = angular.element(document.querySelector('#left-form'));
@@ -25,7 +135,9 @@ app.controller('myCtrl', [
     };
 
     $scope.reload = function () {
-      $window.location.reload();
+      // $window.location.reload();
+      $window.location.href = '../index.html#!/';
+      // $location.path('/');
     };
 
     // SAVE DATA IN LOCAL STORAGE
@@ -60,7 +172,10 @@ app.controller('myCtrl', [
         $scope.password = '';
         $scope.cpassword = '';
         alert('User registered successfully!! Please login now!');
-        $window.location.href = '../login-signup.html';
+        $window.location.href = '../index.html';
+        // $window.location.href = '../index.html#!/';
+        // relaod();
+        // $location.path('/');
       }
     };
 
@@ -86,7 +201,8 @@ app.controller('myCtrl', [
         console.log($scope.currUser);
         alert('User logged in successfully!');
         localStorage.setItem('code', 'secret');
-        $window.location.href = '../index.html#!/home';
+        // $window.location.href = '../index.html#!/home';
+        $location.path('/home');
       } else {
         alert('Login failed! Please try again!');
       }

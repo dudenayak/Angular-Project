@@ -15,10 +15,22 @@
                             <li class="linkColor">Playlist</li>
                         </a><a href="#!/library">
                             <li class="linkColor">Library</li>
-                        </a><a href="#!/contact">
+                        </a>
+                        <!-- <a href="#!/contact">
                             <li class="linkColor">Contact Us</li>
-                        </a></ul>
+                        </a> -->
+                    </ul>
+                    <div class="search">
+                        <i class="fas fa-search"></i>
+                        <input ng-model="search" type="text" name="search" class="search_input"
+                            placeholder="Search Songs / Artists" />
+                    </div>
                 </div>
+                <!-- <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input ng-model="search" type="text" name="search" class="search_input"
+                        placeholder="Search Songs / Artists" />
+                </div> -->
                 <div style="cursor: pointer;" ng-click="logout()">
                     <div class='profile'><img src='./home/img/user.jpg' alt='User Profile' class='user_img' />
                         <div class='user_name'></div>
@@ -68,7 +80,7 @@
                     <div class="top_right">See all</div>
                 </div>
                 <div class="bottom_box">
-                    <div class="box_card" ng-repeat="home in homeSongs">
+                    <div class="box_card" ng-repeat="home in homeSongs  | filter:search">
                         <div>
                             <div class="box_img">
                                 <img src={{home.img}} alt="" class="box_img">

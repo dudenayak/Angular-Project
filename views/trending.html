@@ -13,9 +13,12 @@
                     <li class="linkColor">Playlist</li>
                 </a><a href="#!/library">
                     <li class="linkColor">Library</li>
-                </a><a href="#!/contact">
-                    <li class="linkColor">Contact Us</li>
                 </a></ul>
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input ng-model="search" type="text" name="search" class="search_input"
+                    placeholder="Search Songs / Artists" />
+            </div>
         </div>
         <div style="cursor: pointer;" ng-click="logout()">
             <div class='profile'><img src='./home/img/user.jpg' alt='User Profile' class='user_img' />
@@ -31,7 +34,7 @@
             <div class="top_right">See all</div>
         </div>
         <div class="bottom_box">
-            <div class="box_card" ng-repeat="trending in trendingSongs">
+            <div class="box_card" ng-repeat="trending in trendingSongs | filter:search">
                 <div class="box_img">
                     <img src={{trending.img}} alt="" class="box_img">
                     <div class="play-button"></div>
@@ -46,11 +49,11 @@
         <!-- next line -->
         <div id="recommend" class="recommend" style="margin-top: 15px;">
             <div class="top__text">
-                <div class="top_left">New trending songs in the world</div>
-                <div class="top_right">See all</div>
+                <!-- <div class="top_left">New trending songs in the world</div> -->
+                <!-- <div class="top_right">See all</div> -->
             </div>
             <div class="bottom_box">
-                <div class="box_card" ng-repeat="trending2 in trendingSongs2">
+                <div class="box_card" ng-repeat="trending2 in trendingSongs2 | filter:search">
                     <div class="box_img">
                         <img src={{trending2.img}} alt="" class="box_img">
                         <div class="play-button"></div>

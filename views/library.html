@@ -14,9 +14,12 @@
                         <li class="linkColor">Playlist</li>
                     </a><a href="#!/library">
                         <li class="linkColor">Library</li>
-                    </a><a href="#!/contact">
-                        <li class="linkColor">Contact Us</li>
                     </a></ul>
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input ng-model="search" type="text" name="search" class="search_input"
+                        placeholder="Search Songs / Artists" />
+                </div>
             </div>
             <div style="cursor: pointer;" ng-click="logout()">
                 <div class='profile'><img src='./home/img/user.jpg' alt='User Profile' class='user_img' />

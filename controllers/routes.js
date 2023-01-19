@@ -23,7 +23,7 @@ app.config([
         controller: 'contactCtrl',
       })
       .when('/', {
-        templateUrl: 'login-signup.html',
+        templateUrl: 'views/login-signup.html',
         controller: 'myCtrl',
       })
       .otherwise({

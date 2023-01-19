@@ -1,0 +1,38 @@
+[
+    {
+    "id":1,
+    "title": "Positions",
+    "artist": "Ariana Grnde",
+    "img":"./home/img/1.jpeg"
+},
+{
+    "id":2,
+    "title": "Astronaut in The..",
+    "artist": "Masked Wolf",
+    "img":"./home/img/2.jpeg"
+},
+{
+    "id":3,
+    "title": "Dynamite",
+    "artist": "BTS",
+    "img":"./home/img/3.jpeg"
+},
+{
+    "id":4,
+    "title": "Ashes",
+    "artist": "Steller",
+    "img":"./home/img/4.jpeg"
+},
+{
+    "id":5,
+    "title": "Bad Habits",
+    "artist": "Ed Sheeran",
+    "img":"./home/img/5.jpeg"
+},
+{
+    "id":6,
+    "title": "Save Your Tears",
+    "artist": "The Weeknd",
+    "img":"./home/img/6.jpeg"
+}
+]

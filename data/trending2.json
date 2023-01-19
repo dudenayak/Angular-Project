@@ -1,0 +1,44 @@
+[
+    {
+        "id":8,
+        "title": "Baazigar",
+        "artist": "DIVINE, Armani White",
+        "img":"./home/img/14.jpeg"
+    },
+    {
+        "id":9,
+        "title": "Unstoppable",
+        "artist": "Sia",
+        "img":"./home/img/15.jpeg"
+    },
+    {
+        "id":10,
+        "title": "Calm Down",
+        "artist": "Rema, Selena Gomez",
+        "img":"./home/img/16.jpeg"
+    },
+    {
+        "id":11,
+        "title": "Summer High",
+        "artist": "AP Dhilon",
+        "img":"./home/img/17.jpeg"
+    },
+    {
+        "id":12,
+        "title": "No Love",
+        "artist": "Shubh",
+        "img":"./home/img/18.jpeg"
+    },
+    {
+        "id":13,
+        "title": "Kho Gaye",
+        "artist": "Taaruk Raina",
+        "img":"./home/img/19.jpeg"
+    },
+    {
+        "id":14,
+        "title": "Gul",
+        "artist": "Anuv Jain",
+        "img":"./home/img/20.jpeg"
+    }
+]

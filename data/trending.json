@@ -1,0 +1,44 @@
+[
+    {
+    "id":1,
+    "title": "Unholy",
+    "artist": "Kim Petras",
+    "img":"./home/img/7.jpeg"
+},
+{
+    "id":2,
+    "title": "Made You Look",
+    "artist": "Meghan Trainor",
+    "img":"./home/img/8.jpeg"
+},
+{
+    "id":3,
+    "title": "Escapism",
+    "artist": "Raye",
+    "img":"./home/img/9.jpeg"
+},
+{
+    "id":4,
+    "title": "I Ain't Worried",
+    "artist": "OneRepublic",
+    "img":"./home/img/10.jpeg"
+},
+{
+    "id":5,
+    "title": "Keep On Rolling",
+    "artist": "Belfast Overdose",
+    "img":"./home/img/11.jpeg"
+},
+{
+    "id":6,
+    "title": "Ghost",
+    "artist": "Heidz, The Artist",
+    "img":"./home/img/12.jpeg"
+},
+{
+    "id":7,
+    "title": "Way Too Loud",
+    "artist": "Leen",
+    "img":"./home/img/13.jpeg"
+}
+]

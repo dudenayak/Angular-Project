@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
-
 <body ng-controller="homeCtrl">
     <div id="main" class="main">
         <div>
@@ -21,13 +19,11 @@
                             <li class="linkColor">Contact Us</li>
                         </a></ul>
                 </div>
-                <!-- <a href='logout.html'> -->
                 <div style="cursor: pointer;" ng-click="logout()">
                     <div class='profile'><img src='./home/img/user.jpg' alt='User Profile' class='user_img' />
                         <div class='user_name'></div>
                         <div style='text-decoration: none; color: #fff; font-size: 15px; '>Logout</div>
                     </div>
-                    <!-- </a> -->
                 </div>
             </div>
             <!-- navbar end -->
@@ -52,53 +48,15 @@
             </div>
 
             <div id="recently_played" class="recently_played">
-                <div class="heading">{{message}}</div>
+                <div class="heading">Recently Played</div>
                 <div class="list_box">
-                    <div class="list_item">
-                        <img src="./home/img/5.jpeg" alt="List Icon" class="list_img" />
+                    <div class="list_item" ng-repeat="recent in recentSongs">
+                        <img src={{recent.img}} alt="List Icon" class="list_img" />
                         <div class="list_details">
-                            <div class="list_title">Bad Habits</div>
+                            <div class="list_title">{{recent.title}}</div>
                             <div class="list_subtitle">
                                 <img src="./home/img/E.png" alt="E" />
-                                <div class="artist_name">Ed Sheeren</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list_item">
-                        <img src="./home/img/cradles.jpg" alt="List Icon" class="list_img" />
-                        <div class="list_details">
-                            <div class="list_title">Cradles</div>
-                            <div class="list_subtitle">
-                                <div class="artist_name">Sub Urban</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list_item">
-                        <img src="./home/img/beggin.jpg" alt="List Icon" class="list_img" />
-                        <div class="list_details">
-                            <div class="list_title">Beggin'</div>
-                            <div class="list_subtitle">
-                                <div class="artist_name">Maneskin</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list_item">
-                        <img src="./home/img/Rob-A-Bank.jpg" alt="List Icon" class="list_img" />
-                        <div class="list_details">
-                            <div class="list_title">Rob A Bank</div>
-                            <div class="list_subtitle">
-                                <img src="./home/img/E.png" alt="E" />
-                                <div class="artist_name">Confetti</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list_item">
-                        <img src="./home/img/6.jpeg" alt="List Icon" class="list_img" />
-                        <div class="list_details">
-                            <div class="list_title">Save Your Tears</div>
-                            <div class="list_subtitle">
-                                <img src="./home/img/E.png" alt="E" />
-                                <div class="artist_name">The Weeknd</div>
+                                <div class="artist_name">{{recent.artist}}</div>
                             </div>
                         </div>
                     </div>
@@ -110,80 +68,23 @@
                     <div class="top_right">See all</div>
                 </div>
                 <div class="bottom_box">
-                    <div class="box_card">
+                    <div class="box_card" ng-repeat="home in homeSongs">
                         <div>
                             <div class="box_img">
-                                <img src="./home/img/1.jpeg" alt="" class="box_img">
+                                <img src={{home.img}} alt="" class="box_img">
                                 <div class="play-button"></div>
                             </div>
                         </div>
-                        <div class="box_title">Positions</div>
+                        <div class="box_title">{{home.title}}</div>
                         <div class="box_subtitle list_subtitle">
                             <img src="./home/img/E.png" alt="E" />
-                            <div class="artist_name">Ariana Grnde</div>
-                        </div>
-                    </div>
-                    <div class="box_card">
-                        <div class="box_img">
-                            <img src="./home/img/2.jpeg" alt="" class="box_img">
-                            <div class="play-button"></div>
-                        </div>
-                        <div class="box_title">Astronaut in The..</div>
-                        <div class="box_subtitle list_subtitle">
-                            <img src="./home/img/E.png" alt="E" />
-                            <div class="artist_name">Masked Wolf</div>
-                        </div>
-                    </div>
-                    <div class="box_card">
-                        <div class="box_img">
-                            <img src="./home/img/3.jpeg" alt="" class="box_img">
-                            <div class="play-button"></div>
-                        </div>
-                        <div class="box_title">Dynamite</div>
-                        <div class="box_subtitle list_subtitle">
-                            <img src="./home/img/E.png" alt="E" />
-                            <div class="artist_name">BTS</div>
-                        </div>
-                    </div>
-                    <div class="box_card">
-                        <div class="box_img">
-                            <img src="./home/img/4.jpeg" alt="" class="box_img">
-                            <div class="play-button"></div>
-                        </div>
-                        <div class="box_title">Ashes</div>
-                        <div class="box_subtitle list_subtitle">
-                            <img src="./home/img/E.png" alt="E" />
-                            <div class="artist_name">Steller</div>
-                        </div>
-                    </div>
-                    <div class="box_card">
-                        <div class="box_img">
-                            <img src="./home/img/5.jpeg" alt="" class="box_img">
-                            <div class="play-button"></div>
-                        </div>
-                        <div class="box_title">Bad Habits</div>
-                        <div class="box_subtitle list_subtitle">
-                            <img src="./home/img/E.png" alt="E" />
-                            <div class="artist_name">Ed Sheeran</div>
-                        </div>
-                    </div>
-                    <div class="box_card">
-                        <div class="box_img">
-                            <img src="./home/img/6.jpeg" alt="" class="box_img">
-                            <div class="play-button"></div>
-                        </div>
-                        <div class="box_title">Save Your Tears</div>
-                        <div class="box_subtitle list_subtitle">
-                            <img src="./home/img/E.png" alt="E" />
-                            <div class="artist_name">The Weeknd</div>
+                            <div class="artist_name">{{home.artist}}</div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
 </body>
 
 </html>

@@ -1,0 +1,32 @@
+[
+    {
+    "id":1,
+    "title": "Bad Habits",
+    "artist": "Ed Sheeren",
+    "img":"./home/img/5.jpeg"
+},
+{
+    "id":2,
+    "title": "Cradles",
+    "artist": "Sub Urban",
+    "img":"./home/img/cradles.jpg"
+},
+{
+    "id":3,
+    "title": "Beggin'",
+    "artist": "Maneskin",
+    "img":"./home/img/beggin.jpg"
+},
+{
+    "id":4,
+    "title": "Rob A Bank",
+    "artist": "Confetti",
+    "img":"./home/img/Rob-A-Bank.jpg"
+},
+{
+    "id":5,
+    "title": "Save Your Tears",
+    "artist": "The Weeknd",
+    "img":"./home/img/6.jpeg"
+}
+]

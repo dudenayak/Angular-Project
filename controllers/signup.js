@@ -4,17 +4,28 @@ var app = angular.module('myApp', ['ngRoute']);
 app.controller('homeCtrl', [
   '$scope',
   '$location',
-  function ($scope, $location) {
+  '$http',
+  function ($scope, $location, $http) {
     var check = localStorage.getItem('code');
     if (check == 'secret') {
     } else {
       $location.path('/');
     }
     $scope.logout = () => {
-      // console.log('njrgjknrejkvn');
       localStorage.setItem('code', 'logout');
       $location.path('/');
     };
+
+    // Loading data from json file
+    $scope.homeSongs = [];
+    $http.get('data/home.json').then(function (res) {
+      $scope.homeSongs = res.data;
+    });
+
+    $scope.recentSongs = [];
+    $http.get('data/recently-played.json').then(function (res) {
+      $scope.recentSongs = res.data;
+    });
   },
 ]);
 
@@ -22,17 +33,30 @@ app.controller('homeCtrl', [
 app.controller('trendingCtrl', [
   '$scope',
   '$location',
-  function ($scope, $location) {
+  '$http',
+  function ($scope, $location, $http) {
     var check = localStorage.getItem('code');
     if (check == 'secret') {
     } else {
       $location.path('/');
     }
     $scope.logout = () => {
-      // console.log('njrgjknrejkvn');
       localStorage.setItem('code', 'logout');
       $location.path('/');
     };
+
+    // Loading data from json file
+    $scope.trendingSongs = [];
+    $http.get('data/trending.json').then(function (res) {
+      $scope.trendingSongs = res.data;
+    });
+
+    $scope.trendingSongs2 = [];
+    $http.get('data/trending2.json').then(function (res) {
+      console.log('object');
+      $scope.trendingSongs2 = res.data;
+      console.log(res.data);
+    });
   },
 ]);
 
@@ -47,7 +71,6 @@ app.controller('playlistCtrl', [
       $location.path('/');
     }
     $scope.logout = () => {
-      // console.log('njrgjknrejkvn');
       localStorage.setItem('code', 'logout');
       $location.path('/');
     };
@@ -65,7 +88,6 @@ app.controller('libraryCtrl', [
       $location.path('/');
     }
     $scope.logout = () => {
-      // console.log('njrgjknrejkvn');
       localStorage.setItem('code', 'logout');
       $location.path('/');
     };
@@ -83,23 +105,11 @@ app.controller('contactCtrl', [
       $location.path('/');
     }
     $scope.logout = () => {
-      // console.log('njrgjknrejkvn');
       localStorage.setItem('code', 'logout');
       $location.path('/');
     };
   },
 ]);
-
-// LOGOUT CONTROLLER
-// app.controller('logoutCtrl', [
-//   '$scope',
-//   '$location',
-//   function ($scope, $location) {
-//     var logout = localStorage.setItem('code', 'logout');
-//     // window.location.href = "login-signup.html"
-//     $location.path('/');
-//   },
-// ]);
 
 // LOGIN CONTROLLER
 app.controller('myCtrl', [
@@ -110,12 +120,6 @@ app.controller('myCtrl', [
   'getLocalStorage',
   '$rootScope',
   function ($scope, $location, $http, $window, getLocalStorage, $rootScope) {
-    // $rootScope.logout = function () {
-    //   console.log('logout');
-    //   localStorage.setItem('code', 'logout');
-    //   $location.path('/');
-    // };
-
     $scope.switchSide = function (event) {
       var left_cover = angular.element(document.querySelector('#left-cover'));
       var left_form = angular.element(document.querySelector('#left-form'));
@@ -135,9 +139,7 @@ app.controller('myCtrl', [
     };
 
     $scope.reload = function () {
-      // $window.location.reload();
-      $window.location.href = '../index.html#!/';
-      // $location.path('/');
+      $window.location.href = '../index.html';
     };
 
     // SAVE DATA IN LOCAL STORAGE
@@ -173,9 +175,6 @@ app.controller('myCtrl', [
         $scope.cpassword = '';
         alert('User registered successfully!! Please login now!');
         $window.location.href = '../index.html';
-        // $window.location.href = '../index.html#!/';
-        // relaod();
-        // $location.path('/');
       }
     };
 
@@ -190,7 +189,6 @@ app.controller('myCtrl', [
           );
         })
       ) {
-        // console.log('user found');
         let currUser = $scope.users.map((data) => {
           return (
             data.username == $scope.username_login ||
@@ -201,7 +199,6 @@ app.controller('myCtrl', [
         console.log($scope.currUser);
         alert('User logged in successfully!');
         localStorage.setItem('code', 'secret');
-        // $window.location.href = '../index.html#!/home';
         $location.path('/home');
       } else {
         alert('Login failed! Please try again!');
@@ -209,100 +206,6 @@ app.controller('myCtrl', [
     };
   },
 ]);
-// comment
-// $scope.saveData = function ($event) {
-//   $event.preventDefault();
-//   // console.log($scope.username);
-//   let user = {
-//     username: $scope.username,
-//     email: $scope.email,
-//     phone: $scope.phone,
-//     password: $scope.password,
-//     cpassword: $scope.cpassword,
-//   };
-//   let user_records = JSON.parse(localStorage.getItem('users'))
-//     ? JSON.parse(localStorage.getItem('users'))
-//     : [];
-
-//   // console.log(user);
-//   if (
-//     user_records.some((v) => {
-//       return v.email == $scope.email;
-//     })
-//   ) {
-//     alert('This Email ID is already in use!');
-//   } else {
-//     user_records.push(user);
-//     console.log(user_records);
-//     alert('User registered successfully!! Please login now!');
-//     localStorage.setItem('users', JSON.stringify(user_records));
-//     $scope.username = '';
-//     $scope.email = '';
-//     $scope.email = '';
-//     $scope.phone = '';
-//     $scope.password = '';
-//     $scope.cpassword = '';
-
-//     location.reload();
-//     return false;
-//   }
-// };
-// comment over
-
-// // comment
-
-// // GET DATA FROM LOCAL STORAGE
-// $scope.loadData = function ($event) {
-//   let user = {
-//     username: $scope.username_login,
-//     password: $scope.password_login,
-//   };
-
-//   //   user_records = JSON.parse(localStorage.getItem('users'))
-//   //     ? JSON.parse(localStorage.getItem('users'))
-//   //     : [];
-//   //   let checkuser = user_records.filter((v) => {
-//   //     if (
-//   //       (v.username == user.username || v.email == user.username) &&
-//   //       v.password == user.password
-//   //     ) {
-//   //       return v;
-//   //     }
-//   //   });
-
-//   //   if (checkuser.length > 0) {
-//   //     console.log(checkuser);
-//   //     alert('Login successfully!');
-//   //   } else {
-//   //     alert('Login failed');
-//   //   }
-
-//   user_records = JSON.parse(localStorage.getItem('users'))
-//     ? JSON.parse(localStorage.getItem('users'))
-//     : [];
-//   if (
-//     user_records.some((v) => {
-//       return (
-//         (v.username == user.username || v.email == user.username) &&
-//         v.password == user.password
-//       );
-//     })
-//   ) {
-//     alert('Logged in successfully!');
-//     let current_user = user_records.filter((v) => {
-//       return (
-//         v.username == user.username ||
-//         (v.email == user.username && v.password == user.password)
-//       );
-//     })[0];
-//     localStorage.setItem('code', 'secret');
-//     $window.location.href = '../index.html#!/home';
-//   } else {
-//     alert('Login failed');
-//   }
-// };
-
-// comment over
 
 app.factory('getLocalStorage', function () {
   var userList = {};
